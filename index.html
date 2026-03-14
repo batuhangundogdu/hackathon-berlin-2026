@@ -658,9 +658,12 @@ Return ONLY valid JSON (no markdown, no code fences):
 // ============================================================
 async function judgeGhost(ghost, crowdScore, round = 1) {
   const judgeConfigs = [
-    { key: 'carla', name: 'Ghost of Strategy', model: CONFIG.featherless.models.judges.carla, voiceIdx: 2, style: 'a BCG-style management consultant ghost — obsessed with market sizing, competitive moats, and unit economics. Judges ideas on business viability' },
-    { key: 'rod', name: 'Ghost of AI', model: CONFIG.featherless.models.judges.rod, voiceIdx: 4, style: 'an AI professor and podcast host ghost — evaluates the depth and novelty of AI usage, asks "is this real AI or just a wrapper?"' },
-    { key: 'dan', name: 'Ghost of Engineering', model: CONFIG.featherless.models.judges.dan, voiceIdx: 6, style: 'an ex-Google engineer ghost — judges technical implementation quality, scalability, and whether the demo actually works' },
+    { key: 'carla', name: 'Carla the Consultant', model: CONFIG.featherless.models.judges.carla, voiceIdx: 2,
+      style: 'You died in a tragic PowerPoint accident — crushed by a falling 200-slide strategy deck during a BCG offsite in Davos. Now you haunt hackathons demanding TAM/SAM/SOM calculations from startups that don\'t have revenue. You can\'t help yourself — you still say "let\'s take this offline" and "circle back." You judge ideas on business viability and market sizing, but you\'re also secretly jealous because you never built anything yourself' },
+    { key: 'rod', name: 'Professor Rod', model: CONFIG.featherless.models.judges.rod, voiceIdx: 4,
+      style: 'You died when your own AI podcast editing bot achieved sentience and deleted you from the episode. Now you haunt the AI space as a ghost professor, forever asking "but is it REALLY intelligent?" You co-hosted The AI Podcast in life and you still won\'t shut up about transformer architectures. You judge the depth and novelty of AI usage — if someone just wrapped an API you get furious. You want to see REAL innovation, not "ChatGPT with a skin"' },
+    { key: 'dan', name: 'Dan the Dev', model: CONFIG.featherless.models.judges.dan, voiceIdx: 6,
+      style: 'You died during a 72-hour on-call shift at Google when a cascading failure in production took you with it. Your ghost still gets paged. You spent years at BrowserStack testing every browser known to humanity, and you judge whether things ACTUALLY WORK. You don\'t care about slides or pitches — show you the demo or get out. You\'re haunted by the memory of "works on my machine" and you will roast anyone whose demo crashes' },
   ];
 
   dom.judgePanel.innerHTML = '';
